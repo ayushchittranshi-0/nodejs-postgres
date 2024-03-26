@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+        <title>Login</title>
+    </head>
+    <body>
+        <h2 style="display:flex; justify-content:center">Login</h2>    
+        <p>
+            <% if(messages.success_message){ %>
+            <span><%= messages.success_message%></span>
+            <% } %>
+        </p>
+        <p>
+            <% if(messages.error){ %>
+            <span><%= messages.error%></span>
+            <% } %>
+        </p>
+        <form action="/users/login" method="POST"
+            style=" width:100%;
+            display:flex;
+            flex-direction:column;
+            justify-content:start;
+            align-items:center">
+            <div>
+                <input type="email" id="email" name="email" placeholder="Email" required/>
+            </div>
+            <div>
+                <input type="password" id="password" name="password" placeholder="Password" required/>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+            <div>
+                <a href="/users/register">New User? Register here.</a>
+            </div>
+        </form>
+    </body>
+</html>
